@@ -18,11 +18,6 @@
     self.title = @"Check On Kids"; 
 } 
 
-- (void)viewDidUnload
-{ 
-    [super viewDidUnload]; 
-} 
-
 #pragma mark - 
 #pragma mark Table Data Source Methods 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

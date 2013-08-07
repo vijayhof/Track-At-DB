@@ -78,36 +78,43 @@
     {
         D2Log(@"cAD is null");
         persistentApplicationData = [[PersistentApplicationData alloc] init];
-        
-        // If no custom application data is found, then show first time welcome page
-        FirstTimeWelcomeViewController *first = [storyboard instantiateViewControllerWithIdentifier:@"FirstTimeWelcomeViewController"];
-        root.viewControllers = [NSArray arrayWithObjects:first, nil];
     }
     else
     {
         D2Log(@"cAD is not null");
         D2Log(@"cAD: %d %d %@", persistentApplicationData.version, persistentApplicationData.kidOrParent, persistentApplicationData.personName);
-        
-        if (persistentApplicationData.kidOrParent == kKidKeyValue)
-        {
-            // If custom application data has kid value, then show kid home page
-            KidHomeViewController *kidHome = [storyboard instantiateViewControllerWithIdentifier:@"KidHomeViewController"];
-            root.viewControllers = [NSArray arrayWithObjects:kidHome, nil];
-        }
-        else if (persistentApplicationData.kidOrParent == kParentKeyValue)
-        {
-            // If custom application data has parent value, then show parent home page
-            ParentHomeViewController *parentHome = [storyboard instantiateViewControllerWithIdentifier:@"ParentHomeViewController"];
-            root.viewControllers = [NSArray arrayWithObjects:parentHome, nil];
-        }
-        else
-        {
-            // If custom application data doesn't have valid value for kid or parent, then show first time welcome page
-            FirstTimeWelcomeViewController *first = [storyboard instantiateViewControllerWithIdentifier:@"FirstTimeWelcomeViewController"];
-            root.viewControllers = [NSArray arrayWithObjects:first, nil];
-        }
     }
-
+    
+    if([DBAccountManager sharedManager].linkedAccount == nil)
+    {
+        // If custom application data doesn't have valid value for kid or parent, then show first time welcome page
+        FirstTimeWelcomeViewController *first = [storyboard instantiateViewControllerWithIdentifier:@"FirstTimeWelcomeViewController"];
+        root.viewControllers = [NSArray arrayWithObjects:first, nil];
+        return;
+    }
+    
+    if (persistentApplicationData.kidOrParent == kKidKeyValue)
+    {
+        // If custom application data has kid value, then show kid home page
+        KidHomeViewController *kidHome = [storyboard instantiateViewControllerWithIdentifier:@"KidHomeViewController"];
+        root.viewControllers = [NSArray arrayWithObjects:kidHome, nil];
+        return;
+    }
+    else if (persistentApplicationData.kidOrParent == kParentKeyValue)
+    {
+        // If custom application data has parent value, then show parent home page
+        ParentHomeViewController *parentHome = [storyboard instantiateViewControllerWithIdentifier:@"ParentHomeViewController"];
+        root.viewControllers = [NSArray arrayWithObjects:parentHome, nil];
+        return;
+    }
+    else
+    {
+        // If custom application data doesn't have valid value for kid or parent, then show first time welcome page
+        FirstTimeWelcomeViewController *first = [storyboard instantiateViewControllerWithIdentifier:@"FirstTimeWelcomeViewController"];
+        root.viewControllers = [NSArray arrayWithObjects:first, nil];
+        return;
+    }
+    
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation

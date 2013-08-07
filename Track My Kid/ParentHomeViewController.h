@@ -21,7 +21,6 @@
 
 //@property (strong, nonatomic) DBRestClient *restClient;
 
-- (IBAction) doSetupPage:(id)sender; 
 - (IBAction) doListKids:(id)sender;
 
 - (void) listFilesFromDropBox;

@@ -145,7 +145,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fuT-Au-uiB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="896" y="517"/>
+            <point key="canvasLocation" x="1228" y="537"/>
         </scene>
         <!--Drop Box Unlink View Controller-->
         <scene sceneID="m1b-PX-vJ2">
@@ -167,7 +167,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="didPressDropBoxUnlink:" destination="7A4-sT-Qf5" eventType="touchUpInside" id="yvv-8s-xAw"/>
+                                    <action selector="didPressDropBoxUnlink:" destination="7A4-sT-Qf5" eventType="touchUpInside" id="VIW-px-SZB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -177,7 +177,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5hA-np-vDk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1478" y="148"/>
+            <point key="canvasLocation" x="1800" y="132"/>
         </scene>
         <!--Drop Box Link View Controller-->
         <scene sceneID="wu5-ne-39A">
@@ -289,7 +289,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="coJ-mH-aHW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="902" y="-331"/>
+            <point key="canvasLocation" x="1200" y="-331"/>
         </scene>
     </scenes>
     <classes>
@@ -318,7 +318,6 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ParentHomeViewController.h"/>
             <relationships>
                 <relationship kind="action" name="doListKids:"/>
-                <relationship kind="action" name="doSetupPage:"/>
             </relationships>
         </class>
     </classes>
@@ -329,6 +328,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="sqI-o5-1lB"/>
-        <segue reference="C5R-uE-5mh"/>
+        <segue reference="h3v-Jy-rir"/>
     </inferredMetricsTieBreakers>
 </document>
